@@ -6,9 +6,10 @@ import Image from "next/image";
 // - as a guest, i'd like to be able to seel all events
 
 export default function Home() {
+  
   return (
     <main>
-      Hello World
+      Hello World, This is Hackhive
     </main>
   );
 }
