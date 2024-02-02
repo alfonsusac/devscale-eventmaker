@@ -1,4 +1,5 @@
-// Single Event Page
-//
-// relevant user stories:
-// - as a guest, i'd like to be able to seel all events
+import React from "react";
+
+export default function Event() {
+  return <div>Event</div>;
+}
