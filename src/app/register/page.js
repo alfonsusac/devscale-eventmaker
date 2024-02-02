@@ -1,4 +1,5 @@
-// Register Page
-//
-// relevant user stories:
-// - as a user, i'd like to be able to register and login
+import React from "react";
+
+export default function Register() {
+  return <div>Register</div>;
+}
