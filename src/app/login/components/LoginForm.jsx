@@ -7,8 +7,9 @@ export const LoginForm = () => {
     useRequestLogin();
 
   return (
-    <div className="flex w-full h-full">
-      <div className="bg-blue-500 h-[100vh] w-[50vw]"></div>
+    <div className="flex flex-col items-center justify-center m-auto h-[100vh] gap-10">
+      <h1 className="text-4xl">EVENTMAKER</h1>
+      <h1>LOGIN</h1>
       <div className="flex items-center justify-center w-[50vw]">
         <form onSubmit={handleSubmitLogin} className="flex flex-col gap-4 w-80">
           <input
