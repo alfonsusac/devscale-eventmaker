@@ -1,9 +1,10 @@
 "use client";
 
-import { useLogin } from "../hooks/useLogin";
+import { useRequestLogin } from "@/lib/fetchAPI";
 
 export const LoginForm = () => {
-  const { setEmail, setPassword, handleSubmitLogin } = useLogin();
+  const { loading, setEmail, setPassword, handleSubmitLogin } =
+    useRequestLogin();
 
   return (
     <div className="flex w-full h-full">
@@ -28,7 +29,9 @@ export const LoginForm = () => {
             }}
             className="input input-bordered input-primary w-full max-w-xs"
           />
-          <button className="btn btn-primary">Login</button>
+          <button className="btn btn-primary ">
+            {loading ? "Logging in..." : "Login"}
+          </button>
         </form>
       </div>
     </div>
