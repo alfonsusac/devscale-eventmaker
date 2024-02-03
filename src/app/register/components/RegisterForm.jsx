@@ -13,6 +13,7 @@ export const RegisterForm = () => {
     e.preventDefault();
 
     console.log(name, email, password);
+    router.push("/login");
   }
 
   return (
