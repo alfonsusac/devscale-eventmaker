@@ -4,6 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-slate-100 tracking-tight
+    @apply bg-slate-100 tracking-tight;
+  }
+}
+
+@layer components {
+  .card {
+    @apply border-2 rounded-md p-3;
   }
 }
