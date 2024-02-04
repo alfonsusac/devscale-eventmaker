@@ -1,17 +1,15 @@
 "use client";
 import React from "react";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 export const RegisterForm = () => {
   const router = useRouter();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   async function handleRegister(e) {
     e.preventDefault();
-
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
     console.log(name, email, password);
     router.push("/login");
   }
@@ -23,26 +21,19 @@ export const RegisterForm = () => {
         <form onSubmit={handleRegister} className="flex flex-col gap-4 w-80">
           <input
             type="text"
+            name="name"
             placeholder="Name"
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
             className="input input-bordered input-primary w-full max-w-xs"
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
             className="input input-bordered input-primary w-full max-w-xs"
           />
           <input
             type="password"
             name="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
             id="password"
             placeholder="password"
             className="input input-bordered input-primary w-full max-w-xs"
