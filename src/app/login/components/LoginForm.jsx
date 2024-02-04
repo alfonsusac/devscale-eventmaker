@@ -20,7 +20,9 @@ export const LoginForm = () => {
       const { payload, token } = await requestLogin(email, password);
 
       if (!payload || !token) {
-        throw new Error("User not found, please try again.");
+        setLoading(false);
+        toast.error("User not found, please try again.");
+        return;
       }
 
       localStorage.setItem("user", JSON.stringify(payload));
@@ -38,7 +40,7 @@ export const LoginForm = () => {
 
   return (
     <div className="flex flex-col items-center justify-center m-auto h-[100vh] gap-10">
-      <Image src="/logo.png" width={250} height={200} />
+      <Image src="/logo.png" width={250} height={200} alt="logo" />
       <h1 className="text-4xl">LOGIN</h1>
       <div className="flex items-center justify-center w-[50vw]">
         <form onSubmit={handleSubmitLogin} className="flex flex-col gap-4 w-80">
