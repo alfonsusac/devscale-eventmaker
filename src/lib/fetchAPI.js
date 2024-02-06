@@ -1,4 +1,4 @@
-async function requestLogin(email, password) {
+export async function requestLogin(email, password) {
   const res = await fetch("https://eventmakers-api.fly.dev/auth/login", {
     method: "POST",
     headers: {
@@ -14,7 +14,7 @@ async function requestLogin(email, password) {
   return data;
 }
 
-async function requestEventList(token) {
+export async function requestEventList(token) {
   const res = await fetch("https://eventmakers-api.fly.dev/events", {
     method: "GET",
     headers: {
@@ -26,7 +26,7 @@ async function requestEventList(token) {
   return data;
 }
 
-async function requestUser(token, userid) {
+export async function requestUser(token, userid) {
   const res = await fetch(`https://eventmakers-api.fly.dev/users/${userid}`, {
     method: "GET",
     headers: {
@@ -37,5 +37,3 @@ async function requestUser(token, userid) {
   const { data } = await res.json();
   return data;
 }
-
-export { requestLogin, requestEventList, requestUser };
