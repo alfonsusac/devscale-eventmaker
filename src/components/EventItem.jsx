@@ -14,7 +14,9 @@ export const EventItem = async ({ events }) => {
           <p className="text-gray-500">{events.dateTime}</p>
         </div>
         <div className="divider"></div>
-        <EventItemAuthor userid={events.author} />
+        <p>
+          <EventItemAuthor userid={events.author} />
+        </p>
         <div className="divider"></div>
         <Link href={`/${events.id}`}>
           <button className="btn btn-primary">Detail Event</button>

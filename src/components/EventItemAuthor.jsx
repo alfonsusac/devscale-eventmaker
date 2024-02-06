@@ -5,10 +5,10 @@ export const EventItemAuthor = async ({ userid }) => {
   try {
     data = await requestUser(userid);
   } catch (error) {
-    console.error("An error occurred while fetching the user:", error);
-    return;
+    console.error("An error occurred while fetching the user:", userid, error);
+    return "Unknown User";
   }
 
   let index = 0;
-  return <p>BY: {data ? data[index].name : "Error fetching user"}</p>;
+  return data[index].name;
 };
