@@ -14,7 +14,8 @@ export async function requestLogin(email, password) {
   return data;
 }
 
-export async function requestEventList(token) {
+export async function requestEventList() {
+  const token = process.env["ADMIN_TOKEN"];
   const res = await fetch("https://eventmakers-api.fly.dev/events", {
     method: "GET",
     headers: {
@@ -26,7 +27,8 @@ export async function requestEventList(token) {
   return data;
 }
 
-export async function requestUser(token, userid) {
+export async function requestUser(userid) {
+  const token = process.env["ADMIN_TOKEN"];
   const res = await fetch(`https://eventmakers-api.fly.dev/users/${userid}`, {
     method: "GET",
     headers: {

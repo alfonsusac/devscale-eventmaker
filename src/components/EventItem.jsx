@@ -1,19 +1,8 @@
 import { requestUser } from "@/lib/fetchAPI";
+import { EventItemAuthor } from "./EventItemAuthor";
+import Link from "next/link";
 
 export const EventItem = async ({ events }) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImRzX0djR2RtMERWcEJaUUJOOSIsIm5hbWUiOiJSaXphIiwiZW1haWwiOiJtZUByaXphbWF1bGFuYS5jb20iLCJhdmF0YXIiOm51bGwsImlhdCI6MTcwNzE5MDIwMSwiZXhwIjoxNzE3NTU4MjAxfQ.riLvaqrnJ_VYig8_DxdcsB6zhiAF00VC8lYSSJiBP2Y";
-
-  let data;
-  try {
-    data = await requestUser(token, events.author);
-  } catch (error) {
-    console.error("An error occurred while fetching the user:", error);
-    return;
-  }
-
-  let index = 0;
-
   return (
     <div className="shadow-xl rounded-xl">
       <div className="bg-[url('/event-image.png')] h-32 bg-cover bg-center rounded-t-xl"></div>
@@ -25,11 +14,11 @@ export const EventItem = async ({ events }) => {
           <p className="text-gray-500">{events.dateTime}</p>
         </div>
         <div className="divider"></div>
-        <p>BY: {data ? data[index].name : "Error fetching user"}</p>
+        <EventItemAuthor userid={events.author} />
         <div className="divider"></div>
-        <a href={`/${events.id}`}>
+        <Link href={`/${events.id}`}>
           <button className="btn btn-primary">Detail Event</button>
-        </a>
+        </Link>
       </div>
     </div>
   );
