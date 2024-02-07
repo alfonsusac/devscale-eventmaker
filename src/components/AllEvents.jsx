@@ -5,7 +5,7 @@ export const AllEvents = async () => {
   let events;
   try {
     const { data } = await requestEventList();
-    events = data;
+    events = data.reverse();
   } catch (error) {
     console.error("Error fetching event list:", error);
   }
