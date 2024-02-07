@@ -21,7 +21,7 @@ export default function EventSingle({ events }) {
           <h1>{events.title}</h1>
           <p>{events.description}</p>
         </div>
-        <div className="border-yellow-500 border-solid border-2 w-[30%] flex flex-col items-center text-center p-4">
+        <div className="border-yellow-500 border-solid border-2 w-[30%] flex flex-col items-center text-center p-4 max-h-52 gap-4">
           <Avatar
             size={40}
             name="Ida B"
@@ -31,6 +31,7 @@ export default function EventSingle({ events }) {
           <p>
             <EventItemAuthor userid={events.author} />
           </p>
+          <p>{events.dateTime}</p>
         </div>
       </div>
     </div>
