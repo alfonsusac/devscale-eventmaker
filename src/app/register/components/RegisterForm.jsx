@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { requestRegister } from "@/lib/fetchAPI";
+import toast from "react-hot-toast";
 
 export const RegisterForm = () => {
   const router = useRouter();
@@ -10,8 +12,15 @@ export const RegisterForm = () => {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
-    router.push("/login");
+
+    const req = await requestRegister(name, email, password);
+
+    if (req.message === "User registered successfully") {
+      toast.success(req.message);
+      router.push("/login");
+      return;
+    }
+    toast.error(req.message);
   }
 
   return (
