@@ -1,5 +1,14 @@
-import React from "react";
+import { requestEventList } from "@/lib/fetchAPI";
+import EventSingle from "./components/EventSingle";
 
-export default function Event() {
-  return <div>Event</div>;
+export default async function Event({ params }) {
+  const { eventid } = params;
+  const { data } = await requestEventList();
+  const { events } = data.find((item) => item.events.id === eventid);
+
+  return (
+    <div className="flex justify-center items-center">
+      <EventSingle events={events} />
+    </div>
+  );
 }

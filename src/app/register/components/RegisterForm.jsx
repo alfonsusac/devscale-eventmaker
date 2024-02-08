@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import Image from "next/image";
 import Link from "next/link";
 
+
 export const RegisterForm = () => {
   const router = useRouter();
 
