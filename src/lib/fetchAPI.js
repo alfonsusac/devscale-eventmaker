@@ -26,6 +26,10 @@ export async function requestRegister(name, email, password) {
       password,
     }),
   });
+
+  const data = await res.json();
+  return data;
+
 }
 export async function requestEventList() {
   const token = process.env["ADMIN_TOKEN"];
