@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { requestEventList } from "@/lib/fetchAPI";
 import { EventItem } from "./EventItem";
+import Link from "next/link";
 
 export const EventDashboard = async () => {
   let events;
@@ -22,7 +22,9 @@ export const EventDashboard = async () => {
               Best event listing in Indonesia
             </p>
           </div>
-          <button className="btn btn-secondary">Create New Event</button>
+          <Link href={`/dashboard/create`}>
+            <button className="btn btn-secondary">Create New Event</button>
+          </Link>
         </div>
       </section>
       <section className="grid grid-cols-4 gap-5">
