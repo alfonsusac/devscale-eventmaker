@@ -1,5 +1,9 @@
 import React from "react";
-
+import { CreateEvent } from "@/components/CreateEvent";
 export default function Create() {
-  return <div>Create</div>;
+  return (
+    <div>
+      <CreateEvent />
+    </div>
+  );
 }
