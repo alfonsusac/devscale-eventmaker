@@ -1,6 +1,6 @@
 import React from "react";
-import { DashboardPage } from "@/components/dashboard/components/DashboardPage";
+import { EventDashboard } from "@/components/EventDashboard";
 
 export default function Dashboard() {
-  return <DashboardPage />;
+  return <EventDashboard />;
 }
