@@ -1,11 +1,11 @@
 "use client";
 
 import { logout } from "@/lib/session";
-import { Router } from "next/router";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
-  const router = Router;
+  const router = useRouter();
 
   function handleLogout() {
     logout();
