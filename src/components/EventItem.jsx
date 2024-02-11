@@ -21,10 +21,20 @@ export const EventItem = async ({ events }) => {
             </p>
           </div>
 
-          <div>
+          <div className="grid grid-cols-3 gap-3">
             <Link href={`/${events.id}`}>
               <button className="btn btn-success btn-sm w-full">
                 Detail Event
+              </button>
+            </Link>
+            <Link href={`/dashboard/edit/${events.id}`}>
+              <button className="btn btn-primary btn-sm w-full">
+                Edit Event
+              </button>
+            </Link>
+            <Link href={`/dashboard/delete/${events.id}`}>
+              <button className="btn btn-error btn-sm w-full">
+                Delete Event
               </button>
             </Link>
           </div>
