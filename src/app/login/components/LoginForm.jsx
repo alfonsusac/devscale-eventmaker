@@ -1,7 +1,6 @@
 "use client";
 
-import { requestLogin } from "@/lib/fetchAPI";
-import Cookies from "js-cookie";
+import { login } from "@/lib/session";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -17,16 +16,7 @@ export const LoginForm = () => {
     setLoading(true);
     e.preventDefault();
     try {
-      const { payload, token } = await requestLogin(email, password);
-
-      if (!payload || !token) {
-        setLoading(false);
-        toast.error("User not found, please try again.");
-        return;
-      }
-
-      localStorage.setItem("user", JSON.stringify(payload));
-      Cookies.set("token", token);
+      await login(email, password);
       toast.success("Logged in successfully");
       setTimeout(() => {
         router.push("/dashboard");
