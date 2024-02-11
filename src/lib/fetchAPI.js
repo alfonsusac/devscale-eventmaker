@@ -34,9 +34,9 @@ export async function requestEventList() {
   const token = process.env["ADMIN_TOKEN"];
   const res = await fetch("https://eventmakers-api.fly.dev/events", {
     method: "GET",
+    cache: "no-cache",
     headers: {
       Authorization: `Bearer ${token}`,
-      cache: "no-cache",
     },
   });
 
