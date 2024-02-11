@@ -31,14 +31,7 @@ export async function requestRegister(name, email, password) {
   return data;
 }
 export async function requestEventList() {
-  const token = process.env["ADMIN_TOKEN"];
-  const res = await fetch("https://eventmakers-api.fly.dev/events", {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
-
+  const res = await fetch("https://eventmakers-api.fly.dev/events");
   const data = await res.json();
   return data;
 }
