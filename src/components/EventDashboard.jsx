@@ -1,17 +1,8 @@
 import React from "react";
-import { requestEventList } from "@/lib/fetchAPI";
 import { EventItem } from "./EventItem";
 import Link from "next/link";
 
-export const EventDashboard = async () => {
-  let events;
-  try {
-    const { data } = await requestEventList();
-    events = data;
-  } catch (error) {
-    console.error("Error fetching event list:", error);
-  }
-
+export const EventDashboard = ({ events }) => {
   return (
     <main className="max-w-6xl m-auto">
       <section className="flex justify-center mb-10">
