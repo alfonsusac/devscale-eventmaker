@@ -36,7 +36,7 @@ export async function requestEventList() {
     method: "GET",
     headers: {
       Authorization: `Bearer ${token}`,
-      "Cache-Control": "no-cache",
+      cache: "no-cache",
     },
   });
 
