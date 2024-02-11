@@ -3,7 +3,7 @@ import { React, useState } from "react";
 import Link from "next/link";
 
 export const DeleteEvent = () => {
-  const [prop] = useState({
+  const [prop] = useState({ // Todo: no longer need this
     title: "",
     desc: "",
     dateTime: "",
