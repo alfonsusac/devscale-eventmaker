@@ -6,8 +6,8 @@ export async function middleware(request) {
   //parsing the URL
   const url = new URL(request.url);
   const path = url.pathname;
-  //verify token on dashboard URL
-  if (path === "/dashboard") {
+  //verify token on dashboard
+  if (path.startsWith("/dashboard")) {
     const { token } = session();
     const secretKey = process.env.SECRET_KEY;
     const secret = new TextEncoder().encode(secretKey);
