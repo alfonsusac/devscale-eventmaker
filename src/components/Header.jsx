@@ -1,24 +1,27 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { LoginButton, LogoutButton } from "@/components/HeaderButtons";
+import { HeaderButtons } from "@/components/HeaderButtons";
 
 export const Header = ({ session }) => {
   const router = useRouter();
 
-  let userButton;
+  let UserGreetings;
+  let Buttons;
+
   if (!session) {
-    userButton = <LoginButton />;
+    Buttons = <HeaderButtons type="Guest" />;
   } else {
-    userButton = <LogoutButton />;
+    UserGreetings = <p className="text-sm">Hi, Mafatikhul Ilmi !</p>;
+    Buttons = <HeaderButtons type="User" />;
   }
 
   return (
     <header className="flex justify-between p-3">
       <h3 className="text-base font-bold">eventMakers.</h3>
       <div className="flex space-x-2 items-center">
-        <p className="text-sm">Hi, Mafatikhul Ilmi !</p>
-        {userButton}
+        {UserGreetings}
+        {Buttons}
       </div>
     </header>
   );
