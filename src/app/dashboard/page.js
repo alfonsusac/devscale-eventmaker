@@ -4,8 +4,8 @@ import { session } from "@/lib/server-session";
 import toast from "react-hot-toast";
 
 export default async function Dashboard() {
-  const user = session();
-  const authorID = user.id;
+  const { userData } = session();
+  const authorID = userData.id;
 
   let events;
   try {
