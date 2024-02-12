@@ -1,16 +1,16 @@
 "use client";
 
-import { logout } from "@/lib/session";
-import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { LoginButton, LogoutButton } from "@/components/HeaderButtons";
 
-export const Header = () => {
+export const Header = ({ session }) => {
   const router = useRouter();
 
-  function handleLogout() {
-    logout();
-    toast.success("Logout success!");
-    router.push("/");
+  let userButton;
+  if (!session) {
+    userButton = <LoginButton />;
+  } else {
+    userButton = <LogoutButton />;
   }
 
   return (
@@ -18,12 +18,7 @@ export const Header = () => {
       <h3 className="text-base font-bold">eventMakers.</h3>
       <div className="flex space-x-2 items-center">
         <p className="text-sm">Hi, Mafatikhul Ilmi !</p>
-        <button
-          onClick={handleLogout}
-          className="text-sm border-2 border-indigo-600 rounded-xl py-1 px-2"
-        >
-          Logout
-        </button>
+        {userButton}
       </div>
     </header>
   );

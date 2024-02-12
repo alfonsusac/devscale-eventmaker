@@ -12,14 +12,12 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-
-  console.log(session());
-
+  const userSession = session();
   return (
     <html lang="en">
       <body className={inter.className}>
         <Toaster />
-        <Header />
+        <Header session={userSession}/>
         {children}
       </body>
     </html>
