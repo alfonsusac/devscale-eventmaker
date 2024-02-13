@@ -44,12 +44,9 @@ export async function requestEventList() {
   return data;
 }
 
-export async function requestEvent(token, eventid) {
+export async function requestEvent(eventid) {
   const res = await fetch(`https://eventmakers-api.fly.dev/events/${eventid}`, {
     method: "GET",
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
   });
 
   const { data } = await res.json();
