@@ -12,6 +12,7 @@ export const EventItem = async ({ events }) => {
           alt="event image"
           width={500}
           height={500}
+          unoptimized={true}
           className="h-full w-full object-cover"
         />
       </div>

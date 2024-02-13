@@ -15,6 +15,7 @@ export default function EventSingle({ event }) {
         alt="event image"
         width={500}
         height={500}
+        unoptimized={true}
         className="h-full w-full object-cover"
       />
       <div className="flex w-[100%]">
