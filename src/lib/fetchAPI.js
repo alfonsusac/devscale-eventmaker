@@ -66,6 +66,7 @@ export async function requestUser(userid) {
   return data;
 }
 
+
 export async function requestDeleteEvent(token, eventID) {
   await fetch(`https://eventmakers-api.fly.dev/events/${eventID}`, {
     method: "DELETE",
@@ -73,4 +74,30 @@ export async function requestDeleteEvent(token, eventID) {
       Authorization: `Bearer ${token}`,
     },
   });
+  
+export async function requestCreateEvent(
+  token,
+  author,
+  title,
+  description,
+  image,
+  dateTime
+) {
+  const res = await fetch("https://eventmakers-api.fly.dev/events/", {
+    method: "POST",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      title,
+      description,
+      image,
+      dateTime,
+      author,
+    }),
+  });
+  const data = await res.json();
+  return data;
 }
