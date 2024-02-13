@@ -1,12 +1,12 @@
 import { EditEvent } from "@/components/EditEvent";
 import React from "react";
-import { requestEventList } from "@/lib/fetchAPI";
+import { requestEvent } from "@/lib/fetchAPI";
 
 export default async function Edit({ params }) {
   const { eventid } = params;
-  const { data } = await requestEventList();
-  const { event } = data.find((item) => item.events.id === eventid);
-  console.log(event);
+
+  const event = await requestEvent(eventid);
+
   return (
     <div>
       <EditEvent event={event} />
