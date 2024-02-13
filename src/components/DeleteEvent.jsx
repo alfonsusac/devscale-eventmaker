@@ -19,6 +19,7 @@ export const DeleteEvent = ({ eventid, title, dateTime }) => {
         toast.success("Event deleted successfully");
         setLoading(false);
         router.push("/dashboard");
+        router.refresh();
       }, 2000);
     } catch (error) {
       console.error("Failed to delete event: ", error);
