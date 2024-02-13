@@ -31,7 +31,9 @@ export async function requestRegister(name, email, password) {
   return data;
 }
 export async function requestEventList() {
-  const res = await fetch("https://eventmakers-api.fly.dev/events");
+  const res = await fetch("https://eventmakers-api.fly.dev/events", {
+    cache: "no-cache",
+  });
   const data = await res.json();
   return data;
 }
@@ -39,6 +41,7 @@ export async function requestEventList() {
 export async function requestEvent(eventid) {
   const res = await fetch(`https://eventmakers-api.fly.dev/events/${eventid}`, {
     method: "GET",
+    cache: "no-cache",
   });
 
   const { data } = await res.json();
@@ -48,6 +51,7 @@ export async function requestEvent(eventid) {
 export async function requestUser(token, userid) {
   const res = await fetch(`https://eventmakers-api.fly.dev/users/${userid}`, {
     method: "GET",
+    cache: "no-cache",
     headers: {
       Authorization: `Bearer ${token}`,
     },
