@@ -1,11 +1,13 @@
 import { requestUser } from "@/lib/fetchAPI";
 import { EventItemAuthor } from "./EventItemAuthor";
 import Link from "next/link";
+import { Image } from "next/image";
 
 export const EventItem = async ({ events }) => {
+  console.log(events.image);
   return (
     <div className="card card-compact bg-base-100 shadow-lg">
-      <div className="bg-[url('/event-image.png')] h-32 bg-cover bg-center rounded-t-xl"></div>
+      <div className="h-32 bg-cover bg-center rounded-t-xl"></div>
       <div className="flex flex-col justify-center space-y-3 p-3">
         <div className="space-y-2">
           <h2 className="text-md font-semibold">{events.title}</h2>
