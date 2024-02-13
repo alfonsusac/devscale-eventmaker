@@ -11,10 +11,11 @@ export default function EventSingle({ event }) {
         <p> ◀ Back to Home</p>
       </Link>
       <Image
-        src="/event-image.png"
+        src={event.events.image}
         alt="event image"
         width={500}
         height={500}
+        className="h-full w-full object-cover"
       />
       <div className="flex w-[100%]">
         <div className="flex flex-col w-[70%] p-4">
