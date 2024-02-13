@@ -1,7 +1,5 @@
-import { requestUser } from "@/lib/fetchAPI";
 import { EventItemAuthor } from "./EventItemAuthor";
 import Link from "next/link";
-import { Image } from "next/image";
 
 export const EventItem = async ({ events }) => {
   console.log(events.image);
