@@ -4,10 +4,10 @@ import Avatar from "boring-avatars";
 import { EventItemAuthor } from "@/components/EventItemAuthor";
 import Link from "next/link";
 
-export default function EventSingle({ events }) {
+export default function EventSingle({ event }) {
   return (
     <div className="w-[500px] flex flex-col gap-4 m-4">
-      <Link href="/">
+      <Link href="/dashboard">
         <p> ◀ Back to Home</p>
       </Link>
       <Image
@@ -18,8 +18,8 @@ export default function EventSingle({ events }) {
       />
       <div className="flex w-[100%]">
         <div className="flex flex-col w-[70%] p-4">
-          <h1>{events.title}</h1>
-          <p>{events.description}</p>
+          <h1>{event.events.title}</h1>
+          <p>{event.events.description}</p>
         </div>
         <div className="border-yellow-500 border-solid border-2 w-[30%] flex flex-col items-center text-center p-4 max-h-52 gap-4">
           <Avatar
@@ -29,9 +29,9 @@ export default function EventSingle({ events }) {
             colors={["#F19601", "#F21F26", "#251819", "#EBC83A", "#73B295"]}
           />
           <p>
-            <EventItemAuthor userid={events.author} />
+            <EventItemAuthor userid={event.events.author} />
           </p>
-          <p>{events.dateTime}</p>
+          <p>{event.events.dateTime}</p>
         </div>
       </div>
     </div>
