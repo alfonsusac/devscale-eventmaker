@@ -33,6 +33,7 @@ export const CreateEvent = () => {
 
       toast.success("Event created successfully");
       router.replace("/dashboard");
+      router.refresh();
       setLoading(false);
     } catch (error) {
       console.error(error);
