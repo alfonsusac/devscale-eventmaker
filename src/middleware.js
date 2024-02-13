@@ -8,15 +8,15 @@ export async function middleware(request) {
   const path = url.pathname;
   //verify token on dashboard
   if (path.startsWith("/dashboard")) {
-    const { token } = session();
-    const secretKey = process.env.SECRET_KEY;
-    const secret = new TextEncoder().encode(secretKey);
-    
-    if (!token) {
-      return NextResponse.redirect(new URL("/login", request.url));
-    }
-    
     try {
+      const { token } = session();
+      const secretKey = process.env.SECRET_KEY;
+      const secret = new TextEncoder().encode(secretKey);
+
+      if (!token) {
+        return NextResponse.redirect(new URL("/login", request.url));
+      }
+
       //validating token
       await jose.jwtVerify(token, secret);
       return NextResponse.next();
