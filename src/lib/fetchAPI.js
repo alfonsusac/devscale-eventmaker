@@ -96,3 +96,31 @@ export async function requestCreateEvent(
   const data = await res.json();
   return data;
 }
+
+export async function requestEditEvent(
+  token,
+  author,
+  eventID,
+  title,
+  description,
+  image,
+  dateTime
+) {
+  const res = await fetch(`https://eventmakers-api.fly.dev/events/${eventID}`, {
+    method: "PATCH",
+    cache: "no-cache",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      title,
+      description,
+      image,
+      dateTime,
+      author,
+    }),
+  });
+  const data = await res.json();
+  return data;
+}
