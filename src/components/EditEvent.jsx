@@ -13,7 +13,7 @@ export const EditEvent = ({ event }) => {
   const [loading, setLoading] = useState(false);
   const [prop, setProp] = useState({
     title: `${events.title}`,
-    desc: `${events.description}`,
+    description: `${events.description}`,
     image: `${events.image}`,
     dateTime: `${events.dateTime}`,
   });
@@ -37,7 +37,7 @@ export const EditEvent = ({ event }) => {
 
       const title = e.target.title.value;
       const description = e.target.description.value;
-      const dateTime = e.target.eventdate.value;
+      const dateTime = e.target.dateTime.value;
       const image = e.target.image.value;
 
       await requestEditEvent(
@@ -76,7 +76,7 @@ export const EditEvent = ({ event }) => {
           <textarea
             className="textarea textarea-bordered textarea-primary"
             name="description"
-            value={prop.desc}
+            value={prop.description}
             onChange={handleInputChange}
             placeholder="Description"
           ></textarea>
@@ -90,7 +90,7 @@ export const EditEvent = ({ event }) => {
           />
           <input
             type="date"
-            name="eventdate"
+            name="dateTime"
             placeholder="Event Date"
             value={prop.dateTime}
             onChange={handleInputChange}
