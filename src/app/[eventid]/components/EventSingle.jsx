@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function EventSingle({ event }) {
   return (
     <div className="w-[500px] flex flex-col gap-4 m-4">
-      <Link href="/dashboard">
+      <Link href="/">
         <p> ◀ Back to Home</p>
       </Link>
       <Image
