@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@dicebear/collection": "^7.0.4",
+    "@dicebear/core": "^7.0.4",
     "jose": "^5.2.1",
     "js-cookie": "^3.0.5",
     "jwt-decode": "^4.0.0",
