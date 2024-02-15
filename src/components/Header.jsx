@@ -3,7 +3,6 @@
 import { HeaderButtons } from "@/components/HeaderButtons";
 import Link from "next/link";
 import Image from 'next/image'
-
 import logoText from '@/svg/logo_text.svg'
 
 export const Header = ({ session }) => {
