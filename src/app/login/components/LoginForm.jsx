@@ -13,15 +13,12 @@ export const LoginForm = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmitLogin = async (e) => {
-    setLoading(true);
     e.preventDefault();
     try {
       await login(email, password);
       toast.success("Logged in successfully");
-      setTimeout(() => {
-        router.push("/dashboard");
-        setLoading(false);
-      }, 2000);
+      router.push("/");
+      router.refresh();
     } catch (error) {
       setLoading(false);
       toast.error(error.message);
