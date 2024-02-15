@@ -17,7 +17,7 @@ export default function Home() {
         [&_h1]:font-extrabold
         [&_h1]:text-[4rem]
         [&_h1]:tracking-tighter
-        [&_h1]:leading-none
+        [&_h1]:leading-[1.1]
 
         [&_p]:font-semibold
         [&_p]:text-2xl
@@ -49,13 +49,23 @@ export default function Home() {
       <section className="px-5 py-10">
         <div className="rounded-[3rem] bg-[#2A225B] text-center text-white
           px-[1.25rem] py-[5rem] max-w-screen-xl mx-auto
+          flex flex-col items-center
+
+          [&_h2]:text-5xl
+          [&_h2]:font-extrabold
+          [&_h2]:tracking-tight
+          [&_h2]:leading-[1.2]
         ">
-          <h2>🎉<br />Ready to Make your Mark on the Event Schene?</h2>
-          <p>Don&apos;t miss out on the opportunity to host an unforgettable event. Log in now and let&apos;s get started!</p>
-          <Link className="button btn-primary" href={'/dashboard'}>
-            {'Create your first event ->'}
+          <h2 className="max-w-[35rem]">
+            🎉<br />Ready to Make your Mark on the Event Schene?
+          </h2>
+          <p className="pt-3 text-xl">
+            Don&apos;t miss out on the opportunity to host an unforgettable event. Log in now and let&apos;s get started!
+          </p>
+          <Link className="button btn-primary mt-12 h-[2.625rem] w-[17rem] text-base" href={'/dashboard'}>
+            {'Create your first event'}<PhArrowRightBold />
           </Link>
-          <p>
+          <p className="pt-5 text-sm">
             {"Let's make your event dreams a reality!"}
           </p>
         </div>
@@ -64,5 +74,13 @@ export default function Home() {
       <Footer />
 
     </main>
+  )
+}
+
+
+
+export function PhArrowRightBold(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" {...props}><path fill="currentColor" d="m224.49 136.49l-72 72a12 12 0 0 1-17-17L187 140H40a12 12 0 0 1 0-24h147l-51.49-51.52a12 12 0 0 1 17-17l72 72a12 12 0 0 1-.02 17.01"></path></svg>
   )
 }

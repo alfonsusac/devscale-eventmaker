@@ -17,6 +17,7 @@
     outline
     outline-0 outline-zinc-500/10 
     hover:outline-[0.3rem]
+    flex items-center justify-center
   }
 
   .btn-primary {
