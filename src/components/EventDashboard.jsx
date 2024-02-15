@@ -17,11 +17,21 @@ export const EventDashboard = ({ events, userData }) => {
 
       <section className="flex flex-col gap-5 ">
         {events && events.length > 0 ?
-          events.map(({ events }) => (
-            <EventItem key={events.id} events={events} />
-          )) : (
+          <>
+            <h2 className="font-semibold text-2xl tracking-tight">
+              My events
+            </h2>
+            {
+              events.map(({ events }) => (
+                <>
+                  <EventItem key={events.id} events={events} />
+                </>
+              ))
+            }
+          </>
+          : (
             <p className="text-black font-medium">
-              You have no events created. <Link className="text-blue-600 hover:underline" href={'/dashboard/create'}>Create a new event</Link> 
+              You have no events created. <Link className="text-blue-600 hover:underline" href={'/dashboard/create'}>Create a new event</Link>
             </p>
           )
         }
