@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  .button {
+    @apply text-sm font-bold tracking-tight text-black
+    px-5 py-2 rounded-lg
+    shadow-[inset_0_0_0_0.1rem_#0002]
+  }
+  .btn-primary {
+    @apply bg-primary text-white
+  }
+}

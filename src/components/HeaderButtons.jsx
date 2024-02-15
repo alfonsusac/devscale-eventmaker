@@ -4,8 +4,8 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { login, logout } from "@/lib/session";
 
-const MainButton = ({ funcOnClick, borderCol, text }) => {
-  const classNames = `text-sm border-2 ${borderCol} rounded-xl py-1 px-2`;
+const MainButton = ({ funcOnClick, text }) => {
+  const classNames = `button btn-primary`;
   return (
     <button onClick={funcOnClick} className={classNames}>
       {text}
@@ -25,16 +25,12 @@ export const HeaderButtons = ({ type }) => {
   if (type === "Guest") {
     return (
       <div className="flex gap-2">
-        <MainButton
-          funcOnClick={() => router.push("/login")}
-          borderCol="border-indigo-600"
-          text="Login"
-        />
-        <MainButton
-          funcOnClick={() => router.push("/register")}
-          borderCol="border-green-600"
-          text="Register"
-        />
+        <button className="button" onClick={() => router.push('/login')}>
+          Login
+        </button>
+        <button className="button btn-primary" onClick={() => router.push('/register')}>
+          Register
+        </button>
       </div>
     );
   } else {
