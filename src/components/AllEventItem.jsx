@@ -4,8 +4,13 @@ import Link from "next/link";
 export const AllEventItem = async ({ events }) => {
   return (
     <Link href={`/${events.id}`}>
-      <div className="card card-compact bg-base-100 shadow-lg">
-        <div className="h-40 max-h-[500px] bg-cover bg-center rounded-t-xl">
+      <article className="group">
+        <div className="h-40 max-h-[500px] bg-cover bg-center rounded-xl overflow-hidden
+        transition-all duration-100
+        outline
+        outline-0 outline-zinc-400/20 
+        group-hover:outline-[0.6rem]
+        ">
           <Image
             src={events.image}
             alt="event image"
@@ -15,23 +20,16 @@ export const AllEventItem = async ({ events }) => {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="divider"></div>
-        <div className="flex flex-col justify-center space-y-3 p-3">
-          <div className="space-y-2">
-            <h2 className="h-12 text-md font-semibold">{events.title}</h2>
-            <p className="text-sm text-gray-400 line-clamp-3">
-              {events.description}
-            </p>
-          </div>
-          <div className="space-y-5">
-            <div>
-              <p className="text-sm text-gray-600">
-                Show Time : {events.dateTime}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <header className="mt-4 text-xl font-semibold  tracking-tight leading-tight">
+          {events.title}
+        </header>
+        <p className="font-medium mt-1 text-sm text-gray-600">
+          {events.dateTime}
+        </p>
+        <p className="font-medium mt-2 text-sm line-clamp-2 text-black/60">
+          {events.description}
+        </p>
+      </article>
     </Link>
   );
 };
