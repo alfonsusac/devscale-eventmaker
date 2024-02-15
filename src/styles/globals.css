@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base{
+  body{
+    color: black;
+  }
+}
+
 @layer components{
   .button {
     @apply text-sm font-bold tracking-tight text-black

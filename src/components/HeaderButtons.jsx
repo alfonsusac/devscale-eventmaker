@@ -42,16 +42,6 @@ export const HeaderButtons = ({ type }) => {
         <button className="button" onClick={handleLogout}>
           Logout
         </button>
-        {/* <MainButton
-          funcOnClick={() => router.push("/dashboard")}
-          borderCol="border-indigo-600"
-          text="Go to Dashboard"
-        />
-        <MainButton
-          funcOnClick={handleLogout}
-          borderCol="border-rose-600"
-          text="Logout"
-        /> */}
       </div>
     );
   }
