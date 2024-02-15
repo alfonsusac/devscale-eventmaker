@@ -6,6 +6,19 @@
   body {
     color: black;
   }
+  label {
+    display: block;
+    @apply text-sm text-[#4d4d4d] font-semibold pb-2;
+  }
+  input {
+    display: block;
+    @apply font-semibold mb-4 outline
+    outline-0 outline-zinc-500/10
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 @layer components {
@@ -17,10 +30,24 @@
     outline
     outline-0 outline-zinc-500/10 
     hover:outline-[0.3rem]
-    flex items-center justify-center
+    flex items-center justify-center;
   }
 
   .btn-primary {
-    @apply bg-primary text-white outline-primary/30
+    @apply bg-primary text-white outline-primary/30;
+  }
+
+  .input {
+    @apply 
+    transition-all duration-100
+    text-sm
+    text-black/80
+  }
+
+  .input:focus-visible, .input:focus-within{
+    @apply 
+    outline-offset-0
+    outline-[0.3rem]
+    outline-black/5
   }
 }

@@ -1,10 +1,12 @@
 "use client";
 
+import { LogoWithText } from "@/components/Logo";
 import { login } from "@/lib/session";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Link from "next/link";
+
 
 export const LoginForm = () => {
   const router = useRouter();
@@ -29,34 +31,38 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center m-auto h-[100vh] gap-10">
-      <Image src="/logo.png" width={250} height={200} alt="logo" />
-      <h1 className="text-4xl">LOGIN</h1>
-      <div className="flex items-center justify-center w-[50vw]">
-        <form onSubmit={handleSubmitLogin} className="flex flex-col gap-4 w-80">
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            className="input input-bordered input-primary w-full max-w-xs"
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="password"
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-            className="input input-bordered input-primary w-full max-w-xs"
-          />
-          <button className="btn btn-primary ">
-            {loading ? "Logging in..." : "Login"}
-          </button>
-        </form>
-      </div>
+    <div className="flex flex-col m-auto max-w-80">
+      <LogoWithText />
+      <h1 className="text-4xl pt-6 font-extrabold tracking-tight">Login</h1>
+      <form onSubmit={handleSubmitLogin} className="pt-10">
+        <label>Email address</label>
+        <input
+          type="email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+          className="input input-bordered w-full"
+        />
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
+          className="input input-bordered w-full"
+        />
+        <button className="button btn-primary self-stretch text-sm h-11 mt-8">
+          {loading ? "Logging in..." : "Log in"}
+        </button>
+      </form>
+      <p className="text-sm self-center mt-10 font-semibold text-[#4d4d4d]">
+        {"Don't"} have account?{" "}
+        <Link href={"/register"} className="font-bold text-blue-700 hover:underline">
+          Sign up
+        </Link>
+      </p>
     </div>
   );
 };

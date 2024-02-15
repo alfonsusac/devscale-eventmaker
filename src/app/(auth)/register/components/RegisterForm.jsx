@@ -3,8 +3,8 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { requestRegister } from "@/lib/fetchAPI";
 import toast from "react-hot-toast";
-import Image from "next/image";
 import Link from "next/link";
+import { LogoWithText } from "@/components/Logo";
 
 
 export const RegisterForm = () => {
@@ -27,38 +27,41 @@ export const RegisterForm = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center m-auto h-[100vh] gap-10">
-      <Image src="/logo.png" width={250} height={200} alt="logo" />
-      <h1 className="text-2xl font-semibold">REGISTER</h1>
-      <div className="flex items-center justify-center w-[50vw]">
-        <form onSubmit={handleRegister} className="flex flex-col gap-4 w-80">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            className="input input-sm input-bordered input-primary w-full max-w-xs"
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="input input-sm input-bordered input-primary w-full max-w-xs"
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="password"
-            className="input input-sm input-bordered input-primary w-full max-w-xs"
-          />
+    <div className="flex flex-col m-auto max-w-80">
+      <LogoWithText />
+      <h1 className="text-4xl pt-6 font-extrabold tracking-tight">Create an Account</h1>
+      <form onSubmit={handleRegister} className="pt-10">
+        <label>Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Name"
+          className="input input-bordered w-full"
+        />
 
-          <button className="btn btn-sm btn-primary">Register</button>
-        </form>
-      </div>
-      <p className="text-sm ">
-        Already have account ?{" "}
-        <Link href={"/login"} className="font-bold text-blue-700">
-          SIGN IN
+        <label>Email address</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          className="input input-bordered w-full"
+        />
+
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="password"
+          className="input input-bordered w-full"
+        />
+
+        <button className="button btn-primary self-stretch text-sm h-11 mt-8">Register</button>
+      </form>
+      <p className="text-sm self-center mt-10 font-semibold text-[#4d4d4d]">
+        Already have account?{" "}
+        <Link href={"/login"} className="font-bold text-blue-700 hover:underline">
+          Sign in
         </Link>
       </p>
     </div>

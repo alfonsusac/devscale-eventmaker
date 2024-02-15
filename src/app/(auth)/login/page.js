@@ -4,7 +4,9 @@ import Image from 'next/image'
 export default function Login() {
   return (
     <>
-      <LoginForm />
+      <section className="flex flex-col items-center justify-center py-10">
+        <LoginForm />
+      </section>
       <div className="relative overflow-hidden bg-black hidden md:block">
         <Image
           src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=1&w=1920"
