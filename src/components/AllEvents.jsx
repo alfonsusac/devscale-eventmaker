@@ -1,5 +1,5 @@
 import { requestEventList } from "@/lib/fetchAPI";
-import { EventItem } from "./EventItem";
+import { AllEventItem } from "./AllEventItem";
 
 export const AllEvents = async () => {
   let events;
@@ -14,7 +14,7 @@ export const AllEvents = async () => {
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {events &&
         events.map(({ events }) => (
-          <EventItem key={events.id} events={events} />
+          <AllEventItem key={events.id} events={events} />
         ))}
     </div>
   );
