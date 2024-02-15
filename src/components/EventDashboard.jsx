@@ -6,8 +6,8 @@ export const EventDashboard = ({ events, userData }) => {
   return (
     <main className="max-w-screen-md w-full m-auto ">
 
-      <header className="flex gap-5 items-center mb-10 w-full ">
-        <h1 className="pagetitle">
+      <header className="flex gap-5 items-center mb-16 w-full ">
+        <h1 className="pagetitle mb-0">
           Hello, {userData.name}
         </h1>
         <Link href={`/dashboard/create`}>
@@ -15,7 +15,7 @@ export const EventDashboard = ({ events, userData }) => {
         </Link>
       </header>
 
-      <section className="flex flex-col gap-5 ">
+      <section className="flex flex-col gap-8 ">
         {events && events.length > 0 ?
           <>
             <h2 className="font-semibold text-2xl tracking-tight">

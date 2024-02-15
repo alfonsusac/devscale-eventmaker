@@ -19,7 +19,7 @@ export const EventItem = async ({ events }) => {
 
       <div className="flex flex-col grow flex-1 min-w-0">
         <h2 className="font-semibold min-w-0 truncate">
-          {events.title} asdf asdf asdf asd fasd fasdf asdf asdf asdf asdf asdf asf asdf asdf  asdf asdf asd fasd fasf asdf sad
+          {events.title}
         </h2>
         <p className="font-semibold text-sm text-[#646464] truncate">
           {events.dateTime}

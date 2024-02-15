@@ -6,7 +6,7 @@ export default function DashboardLayout({ children }) {
   return (
     <>
       <HeaderDashboard session={s} />
-      <section className="flex flex-col items-stretch px-5">
+      <section className="flex flex-col items-stretch px-5 mt-8 lg:mt-16">
         {children}
       </section>
     </>

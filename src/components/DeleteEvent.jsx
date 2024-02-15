@@ -29,7 +29,7 @@ export const DeleteEvent = ({ eventid, image, title, dateTime }) => {
     }
   }
   return (
-    <div className="flex flex-col items-center justify-center m-auto  gap-5">
+    <div className="flex flex-col items-center justify-center m-auto gap-5 text-center">
       <Link href={"/dashboard"}>
         <button className="button">{'< '}Back</button>
       </Link>
