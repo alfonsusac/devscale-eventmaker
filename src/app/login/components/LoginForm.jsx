@@ -15,10 +15,14 @@ export const LoginForm = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     try {
-      await login(email, password);
-      toast.success("Logged in successfully");
-      router.push("/dashboard");
-      router.refresh();
+      const { status, message } = await login(email, password);
+      let loginOk = status.toString().slice(0, 2) == "20";
+      if (loginOk) {
+        router.push("/dashboard");
+        router.refresh();
+      } else {
+        toast.error(message);
+      }
     } catch (error) {
       setLoading(false);
       toast.error(error.message);
