@@ -32,7 +32,9 @@ export const LoginForm = () => {
 
   return (
     <div className="flex flex-col m-auto max-w-80">
-      <LogoWithText />
+      <Link href={'/'}>
+        <LogoWithText />
+      </Link>
       <h1 className="text-4xl pt-6 font-extrabold tracking-tight">Login</h1>
       <form onSubmit={handleSubmitLogin} className="pt-10">
         <label>Email address</label>

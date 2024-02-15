@@ -28,7 +28,9 @@ export const RegisterForm = () => {
 
   return (
     <div className="flex flex-col m-auto max-w-80">
-      <LogoWithText />
+      <Link href={'/'}>
+        <LogoWithText />
+      </Link>
       <h1 className="text-4xl pt-6 font-extrabold tracking-tight">Create an Account</h1>
       <form onSubmit={handleRegister} className="pt-10">
         <label>Name</label>
