@@ -42,6 +42,7 @@ export const LoginForm = () => {
               setEmail(e.target.value);
             }}
             className="input input-bordered input-primary w-full max-w-xs"
+            required
           />
           <input
             type="password"
@@ -52,6 +53,7 @@ export const LoginForm = () => {
               setPassword(e.target.value);
             }}
             className="input input-bordered input-primary w-full max-w-xs"
+            required
           />
           <button className="btn btn-primary ">
             {loading ? "Logging in..." : "Login"}
