@@ -6,12 +6,11 @@ export default async function Delete({ params }) {
   const { events } = await requestEvent(eventid);
 
   return (
-    <div>
-      <DeleteEvent
-        eventid={eventid}
-        title={events.title}
-        dateTime={events.dateTime}
-      />
-    </div>
+    <DeleteEvent
+      eventid={eventid}
+      image={events.image}
+      title={events.title}
+      dateTime={events.dateTime}
+    />
   );
 }

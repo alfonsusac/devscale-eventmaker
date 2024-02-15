@@ -5,8 +5,9 @@ import { requestDeleteEvent } from "@/lib/fetchAPI";
 import { session } from "@/lib/session";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
-export const DeleteEvent = ({ eventid, title, dateTime }) => {
+export const DeleteEvent = ({ eventid, image, title, dateTime }) => {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -29,29 +30,43 @@ export const DeleteEvent = ({ eventid, title, dateTime }) => {
   }
   return (
     <div className="flex flex-col items-center justify-center m-auto  gap-5">
-      <h1 className="text-2xl font-semibold">Delete Event</h1>
-      <p>Are you sure you want to delete this event? </p>
-      <div className="flex flex-col items-center justify-center space-y-2 w-[50vw]">
-        <div className="gap-4 space-y-4 w-80">
-          <div className="border border-gray-300 rounded-lg p-3">
-            <h2 className="font-bold">{title}</h2>
-            <p>Event Date : {dateTime}</p>
-          </div>
+      <Link href={"/dashboard"}>
+        <button className="button">{'< '}Back</button>
+      </Link>
 
-          <div className="grid grid-cols-2 gap-3">
-            <button
-              className="btn btn-sm btn-error"
-              onClick={handleDeleteEvent}
-            >
-              {loading ? "Deleting..." : "Delete"}
-            </button>
-            <button className="btn btn-sm btn-default">Cancel</button>
-          </div>
+      <h1 className="pagetitle mb-0">Delete Event</h1>
+      <p className="font-medium">Are you sure you want to delete this Event? This action cannot be undone</p>
+
+
+      <div className="mt-9 border border-gray-200 rounded-lg px-7 py-9 max-w-screen-sm w-full flex flex-col items-center">
+        <div className="w-36 rounded-md overflow-hidden">
+          <Image
+            src={image}
+            alt="event image"
+            width={500}
+            height={500}
+            unoptimized={true}
+            className="h-full w-full object-cover"
+          />
         </div>
-        <Link href={"/dashboard"}>
-          <button className="btn btn-sm btn-outline btn-secondary">Back</button>
-        </Link>
+
+        <h2 className="font-bold mt-4 text-xl">{title}</h2>
+        <p className="font-semibold text-black/60">Event Date : {dateTime}</p>
       </div>
+
+
+      <div className="flex gap-3 mt-9">
+        <button className="button  w-48 h-10">
+          Nah
+        </button>
+        <button
+          className="button btn-primary w-48 h-10"
+          onClick={handleDeleteEvent}
+        >
+          {loading ? "Deleting..." : "Yes, please"}
+        </button>
+      </div>
+
     </div>
   );
 };
