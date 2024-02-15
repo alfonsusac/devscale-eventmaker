@@ -29,7 +29,19 @@ export default function Home() {
           Eventmaker is your go-to app for discovering, tracking, and attending all the hottest events in your area.
         </p>
       </section>
-      <AllEvents />
+
+      <section className="px-14 pt-14 pb-24">
+        <div className="
+          max-w-screen-xl mx-auto flex flex-col gap-7
+          [&_h2]:font-semibold
+          [&_h2]:text-3xl
+        ">
+          <h2>
+            All Events
+          </h2>
+          <AllEvents />
+        </div>
+      </section>
     </main>
   )
 }
