@@ -4,6 +4,6 @@ import logoText from '@/svg/logo_text.svg'
 
 export const LogoWithText = () => {
   return (
-    <Image unoptimized src={logoText} alt="EventMakers" width={188} height={40} />
+    <Image unoptimized src={logoText} alt="EventMakers"/>
   )
 }
