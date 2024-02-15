@@ -2,19 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
-  body{
+@layer base {
+  body {
     color: black;
   }
 }
 
-@layer components{
+@layer components {
   .button {
     @apply text-sm font-bold tracking-tight text-black
     px-5 py-2 rounded-lg
     shadow-[inset_0_0_0_0.1rem_#0002]
+    transition-all duration-75
+    outline
+    outline-0 outline-zinc-500/10 
+    hover:outline-[0.3rem]
   }
+
   .btn-primary {
-    @apply bg-primary text-white
+    @apply bg-primary text-white outline-primary/30
   }
 }
