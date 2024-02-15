@@ -15,11 +15,12 @@ const MainButton = ({ funcOnClick, text }) => {
 
 export const HeaderButtons = ({ type }) => {
   const router = useRouter();
-
+  
   function handleLogout() {
     logout();
     toast.success("Logout success!");
     router.push("/");
+    router.refresh();
   }
 
   if (type === "Guest") {
