@@ -21,6 +21,7 @@ export async function middleware(request) {
       await jose.jwtVerify(token, secret);
       return NextResponse.next();
     } catch (error) {
+      console.log(error)
       return NextResponse.redirect(new URL("/login", request.url));
     }
   }
