@@ -35,7 +35,6 @@ export const RegisterForm = () => {
         <input
           type="text"
           name="name"
-          placeholder="Name"
           className="input input-bordered w-full"
         />
 
@@ -43,7 +42,6 @@ export const RegisterForm = () => {
         <input
           type="email"
           name="email"
-          placeholder="Email"
           className="input input-bordered w-full"
         />
 
@@ -52,7 +50,6 @@ export const RegisterForm = () => {
           type="password"
           name="password"
           id="password"
-          placeholder="password"
           className="input input-bordered w-full"
         />
 
