@@ -2,27 +2,29 @@ import React from "react";
 import { EventItem } from "./EventItem";
 import Link from "next/link";
 
-export const EventDashboard = ({ events }) => {
+export const EventDashboard = ({ events, userData }) => {
   return (
-    <main className="max-w-6xl m-auto">
-      <section className="flex justify-center mb-10">
-        <div className="flex flex-col justify-center space-y-5">
-          <div className="text-center space-y-2">
-            <h2 className="text-3xl font-bold">EventMaker</h2>
-            <p className="text-base text-gray-400">
-              Best event listing in Indonesia
-            </p>
-          </div>
-          <Link href={`/dashboard/create`}>
-            <button className="btn btn-secondary">Create New Event</button>
-          </Link>
-        </div>
-      </section>
-      <section className="grid grid-cols-4 gap-5">
-        {events &&
+    <main className="max-w-screen-md w-full m-auto ">
+
+      <header className="flex gap-5 items-center mb-10 w-full ">
+        <h1 className="text-5xl font-extrabold grow tracking-tighter">
+          Hello, {userData.name}
+        </h1>
+        <Link href={`/dashboard/create`}>
+          <button className="button btn-primary">Create New Event</button>
+        </Link>
+      </header>
+
+      <section className="flex flex-col gap-5 ">
+        {events && events.length > 0 ?
           events.map(({ events }) => (
             <EventItem key={events.id} events={events} />
-          ))}
+          )) : (
+            <p className="text-black font-medium">
+              You have no events created. <Link className="text-blue-600 hover:underline" href={'/dashboard/create'}>Create a new event</Link> 
+            </p>
+          )
+        }
       </section>
     </main>
   );
