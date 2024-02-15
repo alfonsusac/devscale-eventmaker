@@ -1,10 +1,10 @@
-import { Inter } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "@/styles/globals.css";
 import { Header } from "@/components/Header";
 import { Toaster } from "react-hot-toast";
 import { session } from "@/lib/server-session";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Manrope({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
