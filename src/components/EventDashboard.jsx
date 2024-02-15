@@ -23,9 +23,7 @@ export const EventDashboard = ({ events, userData }) => {
             </h2>
             {
               events.map(({ events }) => (
-                <>
-                  <EventItem key={events.id} events={events} />
-                </>
+                <EventItem key={events.id} events={events} />
               ))
             }
           </>
