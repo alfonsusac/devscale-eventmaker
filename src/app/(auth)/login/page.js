@@ -12,7 +12,9 @@ export default function Login() {
           src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=1&w=1920"
           alt="Conference Image"
           fill sizes="50vw"
-          objectFit="cover"
+          style={{
+            objectFit: 'cover'
+          }}
         />
       </div>
     </>

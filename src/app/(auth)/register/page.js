@@ -12,7 +12,9 @@ export default function Register() {
           src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=1&w=1920"
           alt="Conference Image"
           fill sizes="50vw"
-          objectFit="cover"
+          style={{
+            objectFit: 'cover'
+          }}
         />
       </div>
     </>
