@@ -22,7 +22,7 @@ export default function EventSingle({ event }) {
         <p> ◀ Back to Home</p>
       </Link>
       <Image
-        src={event.events.image}
+        src={event?.events.image}
         alt="event image"
         width={500}
         height={500}
