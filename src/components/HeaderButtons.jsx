@@ -36,7 +36,13 @@ export const HeaderButtons = ({ type }) => {
   } else {
     return (
       <div className="flex gap-2">
-        <MainButton
+        <button className="button btn-primary" onClick={() => router.push('/dashboard')}>
+          Go to Dashboard
+        </button>
+        <button className="button" onClick={handleLogout}>
+          Logout
+        </button>
+        {/* <MainButton
           funcOnClick={() => router.push("/dashboard")}
           borderCol="border-indigo-600"
           text="Go to Dashboard"
@@ -45,7 +51,7 @@ export const HeaderButtons = ({ type }) => {
           funcOnClick={handleLogout}
           borderCol="border-rose-600"
           text="Logout"
-        />
+        /> */}
       </div>
     );
   }
