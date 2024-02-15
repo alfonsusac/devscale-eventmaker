@@ -7,7 +7,7 @@ export const EventDashboard = ({ events, userData }) => {
     <main className="max-w-screen-md w-full m-auto ">
 
       <header className="flex gap-5 items-center mb-10 w-full ">
-        <h1 className="text-5xl font-extrabold grow tracking-tighter">
+        <h1 className="pagetitle">
           Hello, {userData.name}
         </h1>
         <Link href={`/dashboard/create`}>
