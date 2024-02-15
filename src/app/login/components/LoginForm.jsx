@@ -17,7 +17,7 @@ export const LoginForm = () => {
     try {
       await login(email, password);
       toast.success("Logged in successfully");
-      router.push("/");
+      router.push("/dashboard");
       router.refresh();
     } catch (error) {
       setLoading(false);
