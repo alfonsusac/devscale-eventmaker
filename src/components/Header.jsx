@@ -2,8 +2,8 @@
 
 import { HeaderButtons } from "@/components/HeaderButtons";
 import Link from "next/link";
-import Image from 'next/image'
-import logoText from '@/svg/logo_text.svg'
+import { LogoWithText } from "./Logo";
+
 
 export const Header = ({ session }) => {
   let UserGreetings;
@@ -19,7 +19,7 @@ export const Header = ({ session }) => {
   return (
     <header className="flex justify-between p-6 max-w-screen-xl mx-auto gap-5">
       <Link href="/">
-        <Image unoptimized src={logoText} alt="EventMakers" width={188} height={40}/>
+        <LogoWithText />
       </Link>
       <div className="flex space-x-2 items-center">
         <p className="text-sm">{UserGreetings}</p>
