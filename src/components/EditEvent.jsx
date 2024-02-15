@@ -61,50 +61,64 @@ export const EditEvent = ({ event }) => {
     }
   }
   return (
-    <div className="flex flex-col items-center justify-center m-auto  gap-5">
-      <h1 className="text-2xl font-semibold">Edit Event</h1>
-      <div className="flex flex-col items-center justify-center space-y-2 w-[50vw]">
-        <form onSubmit={handleEditEvent} className="flex flex-col gap-4 w-80">
+    <div className="max-w-screen-sm w-full flex flex-col m-auto gap-5">
+      <Link href={"/dashboard"}>
+        <button className="button">{'<'} Back</button>
+      </Link>
+      <h1 className="pagetitle">
+        Edit Event
+      </h1>
+      <form className="flex flex-col gap-6" onSubmit={handleEditEvent}>
+
+        <fieldset>
+          <label>Title</label>
           <input
             type="text"
             name="title"
-            placeholder="Title"
             value={prop.title}
             onChange={handleInputChange}
-            className="input input-sm input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered"
           />
+        </fieldset>
+
+        <fieldset>
+          <label>Description</label>
           <textarea
-            className="textarea textarea-bordered textarea-primary"
+            className="textarea textarea-bordered"
             name="description"
             value={prop.description}
             onChange={handleInputChange}
-            placeholder="Description"
-          ></textarea>
+          />
+        </fieldset>
+
+        <fieldset>
+          <label>Image URL</label>
           <input
             type="text"
             name="image"
             value={prop.image}
             onChange={handleInputChange}
-            placeholder="Image URL"
-            className="input input-sm input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered"
           />
+        </fieldset>
+
+        <fieldset>
+          <label>Date</label>
           <input
             type="date"
             name="dateTime"
-            placeholder="Event Date"
             value={prop.dateTime}
             onChange={handleInputChange}
-            className="input input-sm input-bordered input-primary w-full max-w-xs"
+            className="input input-bordered"
           />
+        </fieldset>
 
-          <button className="btn btn-sm btn-primary">
-            {loading ? "Updating..." : "Submit"}
-          </button>
-        </form>
-        <Link href={"/dashboard"}>
-          <button className="btn btn-sm btn-outline btn-secondary">Back</button>
-        </Link>
-      </div>
-    </div>
+        <button className="button btn-primary self-end px-6 text-base mt-4">
+          {loading ? "Updating..." : "Update Event"}
+        </button>
+        
+      </form>
+
+    </div >
   );
 };

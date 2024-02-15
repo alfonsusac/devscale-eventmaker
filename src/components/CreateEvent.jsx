@@ -42,7 +42,7 @@ export const CreateEvent = () => {
     }
   }
   return (
-    <main className="max-w-screen-sm w-full flex flex-col m-auto  gap-5">
+    <main className="max-w-screen-sm w-full flex flex-col m-auto gap-5">
       <Link href={"/dashboard"}>
         <button className="button">{'<'} Back</button>
       </Link>

@@ -8,8 +8,6 @@ export default async function Edit({ params }) {
   const event = await requestEvent(eventid);
 
   return (
-    <div>
-      <EditEvent event={event} />
-    </div>
+    <EditEvent event={event} />
   );
 }
