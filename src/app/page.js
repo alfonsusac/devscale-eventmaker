@@ -48,7 +48,7 @@ export default function Home() {
 
       <section className="px-5 py-10">
         <div className="rounded-[3rem] bg-[#2A225B] text-center text-white
-          px-[1.25rem] py-[5rem]
+          px-[1.25rem] py-[5rem] max-w-screen-xl mx-auto
         ">
           <h2>🎉<br />Ready to Make your Mark on the Event Schene?</h2>
           <p>Don&apos;t miss out on the opportunity to host an unforgettable event. Log in now and let&apos;s get started!</p>
