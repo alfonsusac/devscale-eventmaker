@@ -42,7 +42,7 @@ export const HeaderDashboard = ({ session }) => {
   function handleLogout() {
     logout();
     toast.success("Logout success!");
-    router.push("/");
+    router.push("/dashboard");
   }
 
   return (
