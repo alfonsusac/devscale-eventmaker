@@ -7,6 +7,6 @@ export function session() {
     const userData = jwtDecode(token);
     return { token, userData };
   } else {
-    return null;
+    return {}; 
   }
 }
