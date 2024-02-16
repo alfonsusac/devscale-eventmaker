@@ -10,8 +10,8 @@ export async function requestLogin(email, password) {
     }),
   });
 
+  
   const data = await res.json();
-
   if (!!res.ok) {
     return data;
   } else {
@@ -33,8 +33,13 @@ export async function requestRegister(name, email, password) {
   });
 
   const data = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
+
 export async function requestEventList() {
   const res = await fetch("https://eventmakers-api.fly.dev/events", {
     cache: "no-cache",
