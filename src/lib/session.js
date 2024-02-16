@@ -4,10 +4,9 @@ import Cookies from "js-cookie";
 import { requestLogin } from "@/lib/fetchAPI";
 
 export async function login(email, password) {
-  const { data, status } = await requestLogin(email, password);
-  localStorage.setItem("user", JSON.stringify(data.payload));
-  Cookies.set("token", data.token);
-  return { status, message: data.message };
+  const { token, payload } = await requestLogin(email, password);
+  localStorage.setItem("user", JSON.stringify(payload));
+  Cookies.set("token", token);
 }
 
 export function logout() {

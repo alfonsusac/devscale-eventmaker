@@ -11,8 +11,12 @@ export async function requestLogin(email, password) {
   });
 
   const data = await res.json();
-  const status = res.status;
-  return { data, status };
+
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestRegister(name, email, password) {
