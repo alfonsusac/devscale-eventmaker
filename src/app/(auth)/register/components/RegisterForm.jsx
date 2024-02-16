@@ -38,6 +38,7 @@ export const RegisterForm = () => {
           type="text"
           name="name"
           className="input input-bordered w-full"
+          required
         />
 
         <label>Email address</label>
@@ -45,6 +46,7 @@ export const RegisterForm = () => {
           type="email"
           name="email"
           className="input input-bordered w-full"
+          required
         />
 
         <label>Password</label>
@@ -53,6 +55,7 @@ export const RegisterForm = () => {
           name="password"
           id="password"
           className="input input-bordered w-full"
+          required
         />
 
         <button className="button btn-primary self-stretch text-sm h-11 mt-8">Register</button>
