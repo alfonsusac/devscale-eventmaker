@@ -3,6 +3,8 @@ import Link from "next/link"
 import { AllEvents } from "@/components/AllEvents";
 import logoText from '@/svg/logo_text.svg'
 import { Footer } from "@/components/Footer";
+import heroBG from "@/svg/wavy-bg-1.svg"
+import ctoBG from "@/svg/gradient-bg-1.svg"
 
 // Event Catalog Page
 //
@@ -24,6 +26,7 @@ export default function Home() {
         [&_p]:tracking-tight
         pb-[4rem]
       ">
+        <Image src={heroBG} alt="" className="absolute top-0 left-1/2 -translate-x-1/2 -z-10" />
         <h1>
           Craft, Share, Experience. <br />
           Elevate Your Events.
@@ -47,7 +50,7 @@ export default function Home() {
       </section>
 
       <section className="px-5 py-10">
-        <div className="rounded-[3rem] bg-[#2A225B] text-center text-white
+        <div className="relative rounded-[3rem] overflow-hidden text-center text-white
           px-[1.25rem] py-[5rem] max-w-screen-xl mx-auto
           flex flex-col items-center
 
@@ -68,6 +71,9 @@ export default function Home() {
           <p className="pt-5 text-sm">
             {"Let's make your event dreams a reality!"}
           </p>
+          <div className="absolute flex left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-red-50 -z-10">
+            <Image src={ctoBG} alt="" className="absolute left-[-68.125rem] top-[-49.938rem] -z-10 bg-[#2A225B] max-w-none" />
+          </div>
         </div>
       </section>
 
