@@ -23,11 +23,23 @@ export default function EventSingle({ event }) {
       <div className="bg-indigo-50 bg-gradient-to-t from-indigo-50 to-white max-w-screen-xl w-full h-72 lg:h-96 rounded-b-[3rem] absolute top-0 left-1/2 -translate-x-1/2 -z-10" />
       <Image
         src={event?.events.image}
-        alt="event image"
+        alt="Event Image"
         width={1024}
         height={512}
         unoptimized={true}
-        className="h-full w-full object-cover bg-zinc-100 rounded-3xl"
+        className="h-full w-full object-cover bg-zinc-100 rounded-3xl
+        relative block
+        after:absolute
+        after:inset-0
+        after:bg-zinc-200
+        after:w-full
+        after:h-full
+        after:block
+        after:bg-gradient-to-br
+        after:from-pink-100
+        after:to-red-200
+        shadow-black/10 shadow-2xl
+        "
       />
 
       <div className="flex flex-col lg:flex-row gap-y-20 gap-x-4 w-full items-start mt-16">
