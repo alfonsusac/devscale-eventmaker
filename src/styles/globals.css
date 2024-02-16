@@ -1,3 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    color: black;
+  }
+  label {
+    display: block;
+    @apply text-sm text-[#4d4d4d] font-semibold;
+  }
+  input {
+    display: block;
+    @apply font-semibold outline
+    outline-0 outline-zinc-500/10
+  }
+  fieldset{
+    @apply flex flex-col gap-2
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  .button {
+    @apply text-sm font-bold tracking-tight text-black
+    px-5 py-2 rounded-lg
+    shadow-[inset_0_0_0_0.1rem_#0002]
+    transition-all duration-75
+    outline
+    outline-0 outline-zinc-500/10 
+    hover:outline-[0.3rem]
+    flex items-center justify-center;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white outline-primary/30;
+  }
+
+  .input {
+    @apply 
+    transition-all duration-100
+    text-sm
+    text-black/80
+  }
+
+  .input:focus-visible, .input:focus-within{
+    @apply 
+    outline-offset-0
+    outline-[0.3rem]
+    outline-black/5
+  }
+
+  .pagetitle{
+    @apply text-5xl font-extrabold grow tracking-tighter mb-6
+  }
+}

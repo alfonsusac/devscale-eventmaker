@@ -16,5 +16,5 @@ export default async function Dashboard() {
     toast.error("Error fetching event list:", error);
   }
 
-  return <EventDashboard events={events} />;
+  return <EventDashboard events={events} userData={userData}/>;
 }
