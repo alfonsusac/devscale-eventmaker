@@ -31,16 +31,16 @@ export default function EventSingle({ event }) {
       />
       <div className="flex w-[100%] flex-col">
         <div className="flex flex-col p-4 gap-4">
-          <p>Show time: {event.events.dateTime}</p>
-          <h1>{event.events.title}</h1>
-          <p>{event.events.description}</p>
+          <p>Show time: {event?.events.dateTime}</p>
+          <h1>{event?.events.title}</h1>
+          <p>{event?.events.description}</p>
           {token && (
             <div className="flex flex-col gap-3">
               <p>Penyelenggara:</p>
               <div className="flex gap-2 items-center">
                 <div dangerouslySetInnerHTML={{ __html: svg }} />
                 <p>
-                  <EventItemAuthor userid={event.events.author} />
+                  <EventItemAuthor userid={event?.events.author} />
                 </p>
               </div>
             </div>
