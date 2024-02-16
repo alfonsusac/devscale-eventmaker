@@ -1,14 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { EventItemAuthor } from "@/components/EventItemAuthor";
-import Link from "next/link";
 import { session } from "@/lib/server-session";
 import { createAvatar } from "@dicebear/core";
 import { lorelei } from "@dicebear/collection";
+import { ShareButton } from "./ShareButton";
 
 export default function EventSingle({ event }) {
-  const sessionData = session();
-  const token = sessionData && sessionData.token ? sessionData.token : null;
+  // const sessionData = session();
+  // const token = sessionData && sessionData.token ? sessionData.token : null;
   const avatar = createAvatar(lorelei, {
     seed: "Jasper",
     backgroundColor: ["ffdfbf"],
@@ -31,7 +30,9 @@ export default function EventSingle({ event }) {
         className="h-full w-full object-cover bg-zinc-100 rounded-3xl"
       />
 
-      <div className="flex flex-col gap-4
+      <div className="flex flex-col lg:flex-row gap-y-20 gap-x-4 w-full items-start mt-16">
+
+        <article className="flex flex-col gap-4 grow w-full
         [&>section]:mt-6
         [&>section]:flex
         [&>section]:flex-col
@@ -43,27 +44,56 @@ export default function EventSingle({ event }) {
 
         [&_p]:font-medium
         [&_p]:leading-relaxed
-      ">
+        ">
 
-        <h1 className="font-bold text-4xl mt-16">
-          {event?.events.title}
-        </h1>
+          <h1 className="font-bold text-4xl">
+            {event?.events.title}
+          </h1>
 
-        <section>
-          <h2>
-            Description
-          </h2>
-          <p>{event?.events.description}</p>
-        </section>
+          <section>
+            <h2>
+              Description
+            </h2>
+            <p>{event?.events.description}</p>
+          </section>
 
-        <section>
-          <h2>
-            Date
-          </h2>
-          <p>Show time: {event?.events.dateTime}</p>
-        </section>
+          <section>
+            <h2>
+              Date
+            </h2>
+            <p>{event?.events.dateTime}</p>
+          </section>
+
+        </article>
+
+        <aside className="lg:max-w-72
+          
+          flex flex-col gap-3 w-full
+          [&_p]:text-base
+          [&_p]:font-medium
+        ">
+          <div className="flex w-full 
+            p-5 rounded-md shadow-[0_0_2.4px_0px_rgba(0,0,0,0.25)]
+            [&>div]:flex
+            [&>div]:gap-2
+            [&>div]:items-center
+          ">
+            <div className="">
+              <PhCalendarBlankBold className="text-2xl text-primary flex-none" />
+              <p>{event?.events.dateTime}</p>
+            </div>
+          </div>
+
+          <div className="ml-6 font-medium mt-5 flex">
+            <ShareButton
+              title={event?.events.title}
+              text={"Powered by eventmaker"}
+            />
+          </div>
+        </aside>
 
       </div>
+
 
       {/* {token && (
         <div className="flex flex-col gap-3">
@@ -79,3 +109,10 @@ export default function EventSingle({ event }) {
     </div>
   );
 }
+
+export function PhCalendarBlankBold(props) {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256" {...props}><path fill="currentColor" d="M208 28h-20v-4a12 12 0 0 0-24 0v4H92v-4a12 12 0 0 0-24 0v4H48a20 20 0 0 0-20 20v160a20 20 0 0 0 20 20h160a20 20 0 0 0 20-20V48a20 20 0 0 0-20-20M68 52a12 12 0 0 0 24 0h72a12 12 0 0 0 24 0h16v24H52V52ZM52 204V100h152v104Z"></path></svg>
+  )
+}
+
