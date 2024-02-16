@@ -37,28 +37,34 @@ export const LoginForm = () => {
         <LogoWithText />
       </Link>
       <h1 className="text-4xl pt-6 font-extrabold tracking-tight">Login</h1>
-      <form onSubmit={handleSubmitLogin} className="pt-10">
-        <label>Email address</label>
-        <input
-          type="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          className="input input-bordered w-full"
-          required
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          className="input input-bordered w-full"
-          required
+      <form onSubmit={handleSubmitLogin} className="pt-10 flex flex-col gap-6">
 
-        />
+        <fieldset>
+          <label>Email address</label>
+          <input
+            type="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            className="input input-bordered w-full"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            className="input input-bordered w-full"
+            required
+          />
+        </fieldset>
+
         <button className="button btn-primary self-stretch text-sm h-11 mt-8">
           {loading ? "Logging in..." : "Log in"}
         </button>
