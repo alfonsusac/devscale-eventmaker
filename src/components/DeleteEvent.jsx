@@ -16,15 +16,13 @@ export const DeleteEvent = ({ eventid, image, title, dateTime }) => {
       setLoading(true);
       const { token } = session();
       await requestDeleteEvent(token, eventid);
-      setTimeout(() => {
-        toast.success("Event deleted successfully");
-        setLoading(false);
-        router.push("/dashboard");
-        router.refresh();
-      }, 2000);
+      setLoading(false);
+      toast.success("Event deleted successfully");
+      router.push("/dashboard");
+      router.refresh();
     } catch (error) {
       console.error("Failed to delete event: ", error);
-      toast.error("Failed to delete event");
+      toast.error(error.message);
       setLoading(false);
     }
   }
