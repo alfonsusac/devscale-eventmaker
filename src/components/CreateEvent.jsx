@@ -57,6 +57,7 @@ export const CreateEvent = () => {
             type="text"
             name="title"
             className="input input-bordered"
+            required
           />
         </fieldset>
 
@@ -65,6 +66,7 @@ export const CreateEvent = () => {
           <textarea
             className="textarea textarea-bordered"
             name="description"
+            required
           />
         </fieldset>
 
@@ -83,6 +85,7 @@ export const CreateEvent = () => {
             type="date"
             name="eventdate"
             className="input input-bordered"
+            required
           />
         </fieldset>
 
