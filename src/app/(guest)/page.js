@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link"
 import { AllEvents } from "@/components/AllEvents";
-import logoText from '@/svg/logo_text.svg'
 import { Footer } from "@/components/Footer";
 import heroBG from "@/svg/wavy-bg-1.svg"
 import ctoBG from "@/svg/gradient-bg-1.svg"
@@ -26,7 +25,7 @@ export default function Home() {
         [&_p]:tracking-tight
         pb-[4rem]
       ">
-        <Image src={heroBG} alt="" className="absolute top-0 left-1/2 -translate-x-1/2 -z-10" />
+        <Image src={heroBG} alt="" className="max-w-none absolute top-0 left-1/2 -translate-x-1/2 -z-10" />
         <h1>
           Craft, Share, Experience. <br />
           Elevate Your Events.
