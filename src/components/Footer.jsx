@@ -1,5 +1,3 @@
-import logoText from '@/svg/logo_text.svg'
-import Image from "next/image";
 import { LogoWithText } from './Logo';
 import Link from "next/link";
 

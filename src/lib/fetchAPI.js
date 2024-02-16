@@ -11,7 +11,8 @@ export async function requestLogin(email, password) {
   });
 
   const data = await res.json();
-  return data;
+  const status = res.status;
+  return { data, status };
 }
 
 export async function requestRegister(name, email, password) {

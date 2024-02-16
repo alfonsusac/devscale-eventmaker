@@ -6,8 +6,8 @@ import { lorelei } from "@dicebear/collection";
 import { ShareButton } from "./ShareButton";
 
 export default function EventSingle({ event }) {
-  // const sessionData = session();
-  // const token = sessionData && sessionData.token ? sessionData.token : null;
+  const sessionData = session();
+  const token = sessionData && sessionData.token ? sessionData.token : null;
   const avatar = createAvatar(lorelei, {
     seed: "Jasper",
     backgroundColor: ["ffdfbf"],

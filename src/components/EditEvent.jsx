@@ -78,6 +78,7 @@ export const EditEvent = ({ event }) => {
             value={prop.title}
             onChange={handleInputChange}
             className="input input-bordered"
+            required
           />
         </fieldset>
 
@@ -88,6 +89,7 @@ export const EditEvent = ({ event }) => {
             name="description"
             value={prop.description}
             onChange={handleInputChange}
+            required
           />
         </fieldset>
 
@@ -110,6 +112,7 @@ export const EditEvent = ({ event }) => {
             value={prop.dateTime}
             onChange={handleInputChange}
             className="input input-bordered"
+            required
           />
         </fieldset>
 
