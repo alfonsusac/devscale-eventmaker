@@ -16,14 +16,13 @@ export const RegisterForm = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    const req = await requestRegister(name, email, password);
-
-    if (req.message === "User registered successfully") {
+    try {
+      const req = await requestRegister(name, email, password);
       toast.success(req.message);
       router.push("/login");
-      return;
+    } catch (error) {
+      toast.error(error.message);
     }
-    toast.error(req.message);
   }
 
   return (

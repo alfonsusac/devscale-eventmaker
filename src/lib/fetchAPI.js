@@ -11,8 +11,11 @@ export async function requestLogin(email, password) {
   });
 
   const data = await res.json();
-  const status = res.status;
-  return { data, status };
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestRegister(name, email, password) {
@@ -29,14 +32,23 @@ export async function requestRegister(name, email, password) {
   });
 
   const data = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
+
 export async function requestEventList() {
   const res = await fetch("https://eventmakers-api.fly.dev/events", {
     cache: "no-cache",
   });
   const data = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestEvent(eventid) {
@@ -46,7 +58,11 @@ export async function requestEvent(eventid) {
   });
 
   const { data } = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestUser(token, userid) {
@@ -59,16 +75,24 @@ export async function requestUser(token, userid) {
   });
 
   const { data } = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestDeleteEvent(token, eventID) {
-  await fetch(`https://eventmakers-api.fly.dev/events/${eventID}`, {
+  const res = await fetch(`https://eventmakers-api.fly.dev/events/${eventID}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
     },
   });
+
+  if (!res.ok) {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestCreateEvent(
@@ -95,7 +119,11 @@ export async function requestCreateEvent(
     }),
   });
   const data = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
 
 export async function requestEditEvent(
@@ -123,5 +151,9 @@ export async function requestEditEvent(
     }),
   });
   const data = await res.json();
-  return data;
+  if (!!res.ok) {
+    return data;
+  } else {
+    throw new Error(data.message);
+  }
 }
