@@ -11,12 +11,11 @@ import { useRouter } from "next/navigation";
 export const Header = ({ session }) => {
   let UserGreetings;
   let Buttons;
-
-  if (!session) {
-    Buttons = <HeaderButtons type="Guest" />;
-  } else {
+  if (Object.keys(session).length > 0) {
     UserGreetings = `Hi, ${session.userData.name}!`;
     Buttons = <HeaderButtons type="User" />;
+  } else {
+    Buttons = <HeaderButtons type="Guest" />;
   }
 
   return (
