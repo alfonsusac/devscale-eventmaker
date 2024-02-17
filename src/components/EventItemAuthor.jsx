@@ -12,5 +12,5 @@ export const EventItemAuthor = async ({ userid }) => {
   }
 
   let index = 0;
-  return data[index].name;
+  return data?.[index].name;
 };

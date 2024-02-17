@@ -31,31 +31,38 @@ export const RegisterForm = () => {
         <LogoWithText />
       </Link>
       <h1 className="text-4xl pt-6 font-extrabold tracking-tight">Create an Account</h1>
-      <form onSubmit={handleRegister} className="pt-10">
-        <label>Name</label>
-        <input
-          type="text"
-          name="name"
-          className="input input-bordered w-full"
-          required
-        />
+      <form onSubmit={handleRegister} className="pt-10 flex flex-col gap-6">
 
-        <label>Email address</label>
-        <input
-          type="email"
-          name="email"
-          className="input input-bordered w-full"
-          required
-        />
+        <fieldset>
+          <label>Name</label>
+          <input
+            type="text"
+            name="name"
+            className="input input-bordered w-full"
+            required
+          />
+        </fieldset>
 
-        <label>Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          className="input input-bordered w-full"
-          required
-        />
+        <fieldset>
+          <label>Email address</label>
+          <input
+            type="email"
+            name="email"
+            className="input input-bordered w-full"
+            required
+          />
+        </fieldset>
+
+        <fieldset>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            className="input input-bordered w-full"
+            required
+          />
+        </fieldset>
 
         <button className="button btn-primary self-stretch text-sm h-11 mt-8">Register</button>
       </form>
