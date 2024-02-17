@@ -40,9 +40,9 @@ export const HeaderButtons = ({ type }) => {
         <button className="button btn-primary" onClick={() => router.push('/dashboard')}>
           Go to Dashboard
         </button>
-        <button className="button" onClick={handleLogout}>
+        {/* <button className="button" onClick={handleLogout}>
           Logout
-        </button>
+        </button> */}
       </div>
     );
   }
